@@ -2,6 +2,8 @@ package com.example;
 
 import com.amazonaws.services.sqs.AmazonSQSClient;
 
+import java.util.concurrent.CompletableFuture;
+
 public class SqsQueueService implements QueueService {
   //
   // Task 4: Optionally implement parts of me.
@@ -12,5 +14,25 @@ public class SqsQueueService implements QueueService {
   //
 
   public SqsQueueService(AmazonSQSClient sqsClient) {
+  }
+
+  public CompletableFuture<String> createQueue(QueueConfig queueConfig) {
+    return null;
+  }
+
+  public CompletableFuture<Void> sendMessage(String queueId, QueueMessage queueMessage) {
+    return null;
+  }
+
+  public CompletableFuture<QueueMessage> retrieveMessage(String queueId) {
+    return null;
+  }
+
+  public CompletableFuture<Void> deleteMessage(String queueId, QueueMessage queueMessage) {
+    return null;
+  }
+
+  public CompletableFuture<String> removeQueue(String queueId) {
+    return null;
   }
 }
