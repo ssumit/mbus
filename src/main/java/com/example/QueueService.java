@@ -39,10 +39,10 @@ public interface QueueService {
     public CompletableFuture<Void> deleteMessage(String queueId, QueueMessage queueMessage);
 
     /**
-     * Removes a new queue.
+     * Removes the queue.
      *
      * @param queueId unique queue id.
      * @return.
      */
-    public CompletableFuture<String> removeQueue(String queueId);
+    public CompletableFuture<Void> removeQueue(String queueId);
 }

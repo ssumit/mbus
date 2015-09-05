@@ -22,7 +22,7 @@ public class FileQueueService implements QueueService {
         return null;
     }
 
-    public CompletableFuture<String> removeQueue(String queueId) {
+    public CompletableFuture<Void> removeQueue(String queueId) {
         return null;
     }
 }

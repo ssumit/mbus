@@ -3,7 +3,7 @@ package com.example.common;
 public class QueueConfig {
     private Time visibilityPeriod;
     private Time messRetentionPeriod;
-    private Time maxMessageSize;
+    private long maxMessageSize;
 
     public Time getVisibilityPeriod() {
         return visibilityPeriod;
@@ -21,11 +21,11 @@ public class QueueConfig {
         this.messRetentionPeriod = messRetentionPeriod;
     }
 
-    public Time getMaxMessageSize() {
+    public long getMaxMessageSize() {
         return maxMessageSize;
     }
 
-    public void setMaxMessageSize(Time maxMessageSize) {
+    public void setMaxMessageSize(long maxMessageSize) {
         this.maxMessageSize = maxMessageSize;
     }
 }
