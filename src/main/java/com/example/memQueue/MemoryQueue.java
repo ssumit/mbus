@@ -5,20 +5,20 @@ import com.example.QueueAlreadyRequestedTobeDeletedException;
 import com.example.common.QueueConfig;
 import com.example.common.QueueMessage;
 
-import javax.annotation.concurrent.ThreadSafe;
+import javax.annotation.concurrent.NotThreadSafe;
 
-@ThreadSafe
+@NotThreadSafe
 public class MemoryQueue {
     private final QueueConfig queueConfig;
     private final VisibilityTimeOutQueue<QueueMessage> queueMessageList;
-    private volatile boolean isQueueMarkedToBeDeleted = false;
+    private boolean isQueueMarkedToBeDeleted = false;
 
     public MemoryQueue(QueueConfig queueConfig) {
         this.queueConfig = queueConfig;
         queueMessageList = new VisibilityTimeOutQueue<QueueMessage>(queueConfig.getVisibilityTimeout());
     }
 
-    public synchronized void addMessage(QueueMessage queueMessage) {
+    public void addMessage(QueueMessage queueMessage) {
         if (isQueueMarkedToBeDeleted) {
             throw new QueueAlreadyRequestedTobeDeletedException();
         } else if (queueMessageList.size() > queueConfig.getMaxMessageSize()) {
@@ -28,7 +28,7 @@ public class MemoryQueue {
         }
     }
 
-    public synchronized QueueMessage getMessage() {
+    public QueueMessage getMessage() {
         if (queueMessageList.size() > 0) {
             return queueMessageList.peek();
         } else {
@@ -36,7 +36,7 @@ public class MemoryQueue {
         }
     }
 
-    public synchronized void deleteMessage(QueueMessage queueMessage) {
+    public void deleteMessage(QueueMessage queueMessage) {
         queueMessageList.remove(queueMessage);
     }
 
