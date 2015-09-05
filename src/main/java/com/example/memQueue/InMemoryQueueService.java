@@ -1,4 +1,8 @@
-package com.example;
+package com.example.memQueue;
+
+import com.example.common.QueueConfig;
+import com.example.common.QueueMessage;
+import com.example.QueueService;
 
 import java.util.concurrent.CompletableFuture;
 

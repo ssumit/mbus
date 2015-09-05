@@ -1,6 +1,8 @@
 package com.example;
 
 import com.amazonaws.services.sqs.AmazonSQSClient;
+import com.example.common.QueueConfig;
+import com.example.common.QueueMessage;
 
 import java.util.concurrent.CompletableFuture;
 

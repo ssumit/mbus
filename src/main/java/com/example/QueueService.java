@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.common.QueueConfig;
+import com.example.common.QueueMessage;
+
 import java.util.concurrent.CompletableFuture;
 
 public interface QueueService {
