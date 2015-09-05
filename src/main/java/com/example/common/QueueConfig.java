@@ -1,31 +1,25 @@
 package com.example.common;
 
 public class QueueConfig {
-    private Time visibilityPeriod;
-    private Time messRetentionPeriod;
-    private long maxMessageSize;
+    private final Time visibilityTimeout;
+    private final Time messRetentionPeriod;
+    private final long maxMessageSize;
 
-    public Time getVisibilityPeriod() {
-        return visibilityPeriod;
+    public QueueConfig(Time visibilityTimeout, Time messRetentionPeriod, long maxMessageSize) {
+        this.visibilityTimeout = visibilityTimeout;
+        this.messRetentionPeriod = messRetentionPeriod;
+        this.maxMessageSize = maxMessageSize;
     }
 
-    public void setVisibilityPeriod(Time visibilityPeriod) {
-        this.visibilityPeriod = visibilityPeriod;
+    public Time getVisibilityTimeout() {
+        return visibilityTimeout;
     }
 
     public Time getMessRetentionPeriod() {
         return messRetentionPeriod;
     }
 
-    public void setMessRetentionPeriod(Time messRetentionPeriod) {
-        this.messRetentionPeriod = messRetentionPeriod;
-    }
-
     public long getMaxMessageSize() {
         return maxMessageSize;
-    }
-
-    public void setMaxMessageSize(long maxMessageSize) {
-        this.maxMessageSize = maxMessageSize;
     }
 }

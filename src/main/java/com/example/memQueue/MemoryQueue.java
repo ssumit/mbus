@@ -6,21 +6,19 @@ import com.example.common.QueueConfig;
 import com.example.common.QueueMessage;
 
 import javax.annotation.concurrent.ThreadSafe;
-import java.util.ArrayList;
-import java.util.List;
 
 @ThreadSafe
 public class MemoryQueue {
-    private QueueConfig queueConfig;
-    private final List<QueueMessage> queueMessageList;
+    private final QueueConfig queueConfig;
+    private final VisibilityTimeOutQueue<QueueMessage> queueMessageList;
     private volatile boolean isQueueMarkedToBeDeleted = false;
 
     public MemoryQueue(QueueConfig queueConfig) {
         this.queueConfig = queueConfig;
-        queueMessageList = new ArrayList<QueueMessage>();
+        queueMessageList = new VisibilityTimeOutQueue<QueueMessage>(queueConfig.getVisibilityTimeout());
     }
 
-    public void addMessage(QueueMessage queueMessage) {
+    public synchronized void addMessage(QueueMessage queueMessage) {
         if (isQueueMarkedToBeDeleted) {
             throw new QueueAlreadyRequestedTobeDeletedException();
         } else if (queueMessageList.size() > queueConfig.getMaxMessageSize()) {
@@ -30,15 +28,15 @@ public class MemoryQueue {
         }
     }
 
-    public QueueMessage getMessage() {
+    public synchronized QueueMessage getMessage() {
         if (queueMessageList.size() > 0) {
-            return queueMessageList.get(0);
+            return queueMessageList.peek();
         } else {
             return null;
         }
     }
 
-    public void deleteMessage(QueueMessage queueMessage) {
+    public synchronized void deleteMessage(QueueMessage queueMessage) {
         queueMessageList.remove(queueMessage);
     }
 
