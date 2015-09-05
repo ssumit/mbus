@@ -1,10 +1,10 @@
-package com.example.memQueue;
+package com.example.fileQueue;
 
 import com.example.QueueNotFoundException;
+import com.example.QueueService;
 import com.example.common.ExecutorFactory;
 import com.example.common.QueueConfig;
 import com.example.common.QueueMessage;
-import com.example.QueueService;
 
 import java.util.Map;
 import java.util.UUID;
@@ -12,27 +12,24 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Use thread confinement as synchronized keyword was getting messy.
- */
-public class InMemoryQueueService implements QueueService {
-    private final Map<String, MemoryQueue> queueMap;
+public class FileQueueService implements QueueService {
+    private final Map<String, FileQueue> queueMap;
     private final ExecutorFactory executorFactory;
 
-    public InMemoryQueueService() {
+    public FileQueueService() {
         queueMap = new ConcurrentHashMap<>();
         executorFactory = new ExecutorFactory();
     }
 
     public CompletableFuture<String> createQueue(QueueConfig queueConfig) {
-        MemoryQueue memoryQueue = new MemoryQueue(queueConfig);
+        FileQueue queue = new FileQueue(queueConfig);
         String uniqueId = UUID.randomUUID().toString();
-        queueMap.put(uniqueId, memoryQueue);
+        queueMap.put(uniqueId, queue);
         return CompletableFuture.completedFuture(uniqueId);
     }
 
     public CompletableFuture<Void> sendMessage(final String queueId, final QueueMessage queueMessage) {
-        final CompletableFuture<Void> future = new CompletableFuture<Void>();
+        final CompletableFuture<Void> future = new CompletableFuture<>();
         scheduleNow(() -> {
             if (queueMap.containsKey(queueId)) {
                 try {
