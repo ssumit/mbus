@@ -31,7 +31,7 @@ public interface QueueService {
     public CompletableFuture<QueueMessage> retrieveMessage(String queueId);
 
     /**
-     * deletes a single message from a particular queue.
+     * deletes a single message from a particular queue if it is not visible currently.
      * @param queueId unique queue id.
      * @param queueMessage queue message to be sent
      * @return

@@ -1,6 +1,6 @@
 Message Queues
 --------------
-
+(Notes are at the end).
 
 Background
 ----------
@@ -66,3 +66,11 @@ Scope
    when used concurrently in multiple VMs); and
 
 4. (optional, time permitting) implement an sqs-based version of the interface.
+
+
+
+
+Notes:
+
+File based Queuing Service is expected to be standalone service and other applications are supposed to use the client
+provided by that service. In this repo, the attempt is come up with service impl and leaving the client part for now.

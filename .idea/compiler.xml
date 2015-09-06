@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="canva-queue-challenge" />
+        <module name="mbus" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="canva-queue-challenge" target="1.5" />
+      <module name="mbus" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

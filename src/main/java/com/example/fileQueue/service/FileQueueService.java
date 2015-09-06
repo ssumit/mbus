@@ -1,4 +1,4 @@
-package com.example.fileQueue;
+package com.example.fileQueue.service;
 
 import com.example.QueueNotFoundException;
 import com.example.QueueService;
