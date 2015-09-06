@@ -32,4 +32,20 @@ public class InMemoryQueueTest {
                     return null;
                 });
     }
+
+    @Test
+    public void testVisibilityConstraint() {}
+
+    @Test
+    public void testRententionConstraint() {}
+
+    @Test
+    public void testMaxNumberOfMessagesConstraint() {}
+
+    @Test
+    public void receiveFromEmptyQueue() {}
+
+    @Test
+    public void testMultipleQueues() {}
+
 }

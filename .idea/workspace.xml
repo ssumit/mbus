@@ -4,7 +4,7 @@
     <list default="true" id="36d55d8a-c377-45ad-bdc1-cd10b2f890cd" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/example/fileQueue/service/FileQueue.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/example/memQueue/VisibilityTimeOutQueue.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/memQueue/QueueConfigQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/memQueue/QueueConfigQueue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java" />
     </list>
     <ignored path="canva-queue-challenge.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,16 +86,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fileQueue/client/FileClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="JDBCWrapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fileQueue/service/store/JDBCWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,15 +128,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueConfigQueue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueueConfigQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/memQueue/QueueConfigQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78066915">
-              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#1027#1028#0" expanded="true" />
                 <element signature="e#1085#1086#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InMemoryQueueTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.91635686">
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/memQueue/ExecutorFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/QueueMessageImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/QueueMessageTestImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/common/ExecutorFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fileQueue/fileQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/memQueue/InMemoryQueueService.java" />
@@ -216,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/memQueue/MemoryQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/memQueue/VisibilityTimeOutQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/memQueue/QueueConfigQueue.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java" />
       </list>
     </option>
   </component>
@@ -743,16 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/QueueMessageTestImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -927,12 +917,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/memQueue/QueueConfigQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78066915">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1027#1028#0" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/InMemoryQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91635686">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
