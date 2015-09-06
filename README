@@ -73,4 +73,10 @@ Scope
 Notes:
 
 File based Queuing Service is expected to be standalone service and other applications are supposed to use the client
-provided by that service. In this repo, the attempt is come up with service impl and leaving the client part for now.
+provided by that service. In this repo, the attempt is come up with service impl and leaving the client part for now. We
+choose to sql instead of simple file - the libraries are there and we dont have to manipulate them a lot.
+I want to implement in a different way though. I would prefer to keep log of operations. so every command would update
+some file. Then there is a cron which is serially processing logs for each file queue and applying or rejecting each
+operation.
+
+There has been no batching but can be achieved easily to improve performance.
